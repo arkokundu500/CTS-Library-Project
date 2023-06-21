@@ -1,0 +1,261 @@
+/* Request section for Admin */
+
+#request-panel-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+#request-panel-options > * {
+    padding: 5px 10px;
+    user-select: none;
+    cursor: pointer;
+    color: var(--unimportant-text-color);
+}
+#request-panel-options > .active {
+    color: var(--context-text);
+    border-bottom: 5px solid currentColor;
+    font-weight: bold;
+}
+#request-panel-requests > * {
+    display: none;
+}
+#request-panel-requests > .active {
+    display: block;
+}
+
+/* Notification for Admin */
+
+#notification {
+    position: relative;
+}
+#notification-area {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 30px;
+    height: max-content;
+    min-height: 55px;
+    max-height: 70vh;
+    
+    border-top: 1px solid rgba(var(--border), 0.25);
+}
+#notification-area > #notification-resizer {
+    position: absolute;
+    width: 100.5%;
+    height: 4px;
+    border-radius: 200px;
+    background-color: rgba(var(--border), 0.25);
+    cursor: row-resize;
+    user-select: none;
+    top: -1px;
+    right: -1.5px;
+}
+#notification-content {
+    height: 100%;
+}
+#notification-area #create-notification {
+	display: flex;
+	padding: 12px 0 0 12px;
+    color: rgba(var(--border), 0.35);
+}
+#notification-area #create-notification > .icon > * {
+    width: 1.8em;
+    height: 1.8em;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+#notification-area #create-notification > *:last-child {
+	padding: 3px 0 0 8px;
+	font-size: 1.3rem;
+    cursor: pointer;
+}
+#notification-area #writing-system {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 55px);
+    display: none;
+    padding-top: 12px;
+    transition: height 0.5s ease-in 0.2s, opacity 0.2s ease-in;
+}
+#notification-area #writing-system.active {
+    display: block;
+    transition: height 0.5s ease-in, opacity 0.2s ease-in 0.2s;
+}
+#filter-select {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit,minmax(240px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#filter-select select,
+#filter-select button {
+    width: 200px;
+    text-align: center;
+    padding: 10px 15px;
+    outline: none;
+    border-radius: 8px;
+    color: var(--context-text);
+    background-color: rgba(var(--border), .05);
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 2px 6px rgba(var(--border), .2);
+    border: 2px solid rgba(var(--border), .35);
+    cursor: pointer;
+    transition: all .24s ease-in-out;
+}
+#filter-select select:hover,
+#filter-select button:hover {
+    background-color: rgba(var(--border), .1);
+    box-shadow: 0px 4px 15px rgba(var(--border), .3);
+}
+#filter-select select option,
+#filter-select select optgroup {
+    color: initial;
+    font-family: inherit;
+    font-style: normal;
+}
+#filter-select:nth-child(3) {
+    width: 150px;
+}
+option {
+    font-size: initial;
+    font-weight: initial;
+}
+select {
+    appearance: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+#notification-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#notification-textarea #textarea,
+#notification-textarea #preview {
+    font-size: 1.2rem;
+}
+#notification-textarea #previewtext {
+    width: 600px;
+    height: 200px;
+    border: 1px solid #000;
+    background: #ddd;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-type: y mandatory;
+    color: black;
+}
+#notification-textarea #preview {
+    position: absolute;
+    bottom: 0;
+    scroll-snap-align: end;
+    font-family: "Rubik";
+    padding: 0.5em 0.8em;
+    width: 100%;
+    max-height: 100%;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+}
+#notification-textarea #preview * {
+    font-size: 1em;
+}
+#notification-textarea #preview u {
+    text-decoration-thickness: 2px;
+}
+#notification-textarea #preview h1 {
+    font-size: 2em;
+}
+#notification-textarea #preview p.center,
+#notification-textarea #preview h1.center {
+    text-align: center;
+}
+#notification-textarea #formattable {
+    width: 600px;
+    height: 200px;
+}
+#notification-textarea #formattable > * {
+    border: 1px solid #000;
+    width: 100%;
+}
+#notification-textarea #textarea {
+    height: 130px;
+    box-shadow: none;
+    border-bottom: none;
+    padding: 5px 10px;
+    outline: 0;
+    resize: none;
+    font-family: "Varela Round", "Helvetica Neue", "Helvetica";
+    scrollbar-width: none;
+}
+#notification-textarea #textarea::-webkit-scrollbar {
+    display: none;
+}
+#notification-textarea #formatbox {
+    height: 70px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.material-symbols-rounded {
+    width: 40px;
+    height: 40px;
+    border-radius: 1000px;
+    text-align: center;
+    line-height: 40px;
+    background: #dedede;
+    border: 1px solid #ababab;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    user-select: none;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+}
+.material-symbols-rounded:hover {
+    scale: 1.1;
+    box-shadow: 5px 5px 8px #dedede;
+}
+
+#checked {
+    background: rgba(var(--border), .3);
+    border-radius: 2vmin;
+    height: 60px;
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.checkbox {
+    padding: 5px 10px;
+    border: 1px solid red;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    gap: 15px;
+    user-select: none;
+    background: #00f3ff;
+}
+:disabled {
+    filter: grayscale(1);
+}
+.checkbox span {
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    display: none;
+}
+
+@media only screen and (max-width: 680px) {
+    #notification-area {
+        left: 22px;
+    }
+    #notification-textarea {
+    flex-direction: row-reverse;
+    }
+}

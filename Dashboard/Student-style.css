@@ -1,0 +1,70 @@
+/* Home Section for student */
+
+.gridbox {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px, 1fr));
+}
+.gridbox > .gridcard {
+    position: relative;
+    z-index: 1;
+    min-height: 200px;
+    border-top: 1px solid hsla(323.9, 52.2%, 50%, 0.75);
+    border-left: 1px solid hsla(323.9, 52.2%, 50%, 0.75);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    cursor: pointer;
+    /* user-select: none; */
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+.gridbox > .gridcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(25deg) translateX(0);
+    transition: transform 0.2s cubic-bezier(.45,.05,.55,.95);
+}
+.gridbox > .gridcard:hover::before {
+    transform: skewX(25deg) translateX(-95%);
+}
+.gridcard-content {
+    position: relative;
+    padding: 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.gridcard-heading {
+    font-size: clamp(1.2rem, 0.5rem + 2vw, 1.5rem);
+    margin-bottom: 1.5rem;
+}
+.gridcard .gridcard-heading {
+    transform: scale(1.1) translateX(5%);
+    transition: all .2s ease .2s;
+}
+.gridcard:hover .gridcard-heading {
+    transform: scale(1) translateX(0%);
+    transition-delay: 0s;
+}
+.gridcard-context{
+    align-self: flex-end;
+    text-align: right;
+}
+.gridcard .gridcard-context {
+    transform: translateY(25px);
+    opacity: 0;
+    transition: all .2s ease 0s;
+}
+.gridcard:hover .gridcard-context {
+    transform: translateY(0px);
+    opacity: 1;
+    transition-delay: .2s;
+}
