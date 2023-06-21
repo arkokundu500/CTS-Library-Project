@@ -1,0 +1,177 @@
+@import "../Essential Kits/css/Root.css";
+
+/* Sidebar */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 85px;
+    /* overflow-y: auto; */
+    height: calc(100% - 70px);
+    background: var(--sidebar-background-color);
+    transition: all .5s ease;
+    z-index: 8;
+    box-shadow: 5px 0px 30px #070707;
+}
+.sidebar:hover {
+    width: 250px;
+}
+.sidebar header
+{
+    position: sticky;
+    z-index: 6;
+    top: 0;
+    font-size: 22px;
+    color:white;
+    height: 70px;
+    background: #063146;
+    user-select: none;
+    padding-left: 32.5px;
+}
+.sidebar header h3 {
+    height: 100%;
+}
+.sidebar .sidebar-contents {
+    height: calc(100% - 70px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sidebar .sidebar-contentlist {
+    padding: 20px 0 20px 12.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .sidebar-contentlist > li {
+    position: relative;
+}
+.sideopt.active b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    right: -5px;
+    height: 20px;
+    width: 89%;
+    background: var(--sec-background-color);
+    overflow: hidden;
+    transition: all .2s linear .2s, background .3s linear;
+}
+.sideopt.active b:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--sidebar-background-color);
+    transition: background .3s linear;
+    border-bottom-right-radius: 50px;
+
+}
+.sideopt.active b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    right: -5px;
+    height: 20px;
+    width: 89%;
+    background: var(--sec-background-color);
+    transition: all .2s linear .2s, background .3s linear;
+    overflow: hidden;
+}
+.sideopt.active b:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--sidebar-background-color);
+    transition: background .3s linear;
+    border-top-right-radius: 50px;
+}
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    height:65px;
+    font-size:20px;
+    color: var(--navbar-text);
+    padding-left: 20px;
+    transition: .4s;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+}
+.sidebar ul a,
+.sidebar h3 {
+    display: flex;
+    align-items: center;
+}
+
+.sideopt a:hover,
+.sideopt:hover a:hover {
+    background-color: var(--sidebar-option-hover-color);
+    transition: background-color .25s linear;
+
+}
+.sideopt.active a,
+.sideopt.active a:hover,
+.sideopt.active:hover a:hover {
+    background-color: var(--sec-background-color);
+    transition: background-color .5s linear, padding-left .5s linear;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+}
+.sidebar ul a span,
+.sidebar header h3 span {
+    margin-right:16px;
+}
+.sidebar h3>span,
+.sidebar ul>li>a>span {
+    width: 22.5167px;
+}
+.sidebar .sideopt-text {
+    display: none;
+    min-width: max-content;
+}
+.sidebar:hover .sideopt-text {
+    display: block;
+}
+
+/* Main section */
+
+.main-content {
+    color: var(--context-text);
+    margin-left: 85px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+section {
+    padding: 120px 30px 30px 40px;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+section > h2 {
+    font-size: clamp(2rem, 1rem + 5vw, 4rem);
+}
+section > div {
+    margin-top: 1.5rem;
+}
+
+footer {
+    left: 85px !important;
+    width: calc(100% - 85px) !important;
+}
+/* Media queries */
+
+@media only screen and (max-width: 680px) {
+    section {
+        padding-left: 22px;
+    }
+}
