@@ -17,30 +17,28 @@
         $aboutflag=1;
         include '../Essential Kits/php/Navbar.php'
     ?>
-    <div class="boxmain background">
-                <div id="slidebox">
-                    <h2>Gallery of Library</h2>
-                    <div>
-                        <div class=" mySlides">
-                            <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
-                            <div><h1><b>Entry</b></h1></div>
-                        </div>
-                        <div class=" mySlides">
-                            <img src="https://i.ibb.co/vh3MXZQ/LIB3.jpg">
-                            <div><h1><b>Interior</b></h1></div>
-                        </div>
-                        <div class=" mySlides">
-                            <img src="https://i.ibb.co/7gV0mw7/LIB4.jpg">
-                            <div><h1><b>Librarian</b></h1></div>
-                        </div>
-                        <div class=" mySlides">
-                            <img src="https://i.ibb.co/cTjwPvJ/lib6.jpg">
-                            <div><h1><b>Interior</b></h1></div>
-                        </div>
-                    </div>
-                    <button class="nav-btn" onclick="plusDivs(-1)">&#10094;</button>
-                    <button class="nav-btn" onclick="plusDivs(1)">&#10095;</button>
-                </div>
+    <div class="content">
+      <div class="slides">
+        <div class="slide_content 1">
+        <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
+        <div class="show">
+            Entry
+        </div>
+        </div>
+        <div class="slide_content 2">
+            <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
+          <h1 class="show">This is the second contest to Slide-show</h1>
+        </div>
+        <div class="slide_content 2">
+            <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
+          <h1 class="show">This is the third contest to Slide-show</h1>
+        </div>
+        <div class="slide_content 4">
+            <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
+          <h1 class="show">This is the fourth contest to Slide-show</h1>
+        </div>
+      </div>
+    </div>
                 
                 <div class="secondHalf">
                     <h2>The Calcutta Technical School Library</h2>
