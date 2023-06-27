@@ -23,7 +23,7 @@
                     <div>
                         <div class=" mySlides">
                             <img src="https://i.ibb.co/Rp9L54H/LIB2.jpg">
-                            <div><h1><b>Entry</b></h1></div>
+                            <b>Entry</b>
                         </div>
                         <div class=" mySlides">
                             <img src="https://i.ibb.co/vh3MXZQ/LIB3.jpg">
